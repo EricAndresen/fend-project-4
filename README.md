@@ -1,4 +1,4 @@
-# Project
+# Project 4 - Add Tests to Feed Reader
 
 This is a simple RSS reader provided as part of the Udacity Front-End Nanodegree Certificate.
 
