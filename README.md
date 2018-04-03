@@ -6,4 +6,4 @@ In this excercise I added tests in jasmine.js according to the insructions provi
 
 To run, simply open index.html and see the jasmine read-out at the bottom of the page and inspect the tests in feedreader.js.
 
-Note: Jasmine 2.1.2 was provide by default, so older syntax is used for async tests (e.g. done() instead of async / await).
+Note: Jasmine 2.1.2 was provided by default, so older syntax is used for async tests (e.g. done() instead of async / await).
