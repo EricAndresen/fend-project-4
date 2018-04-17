@@ -1,3 +1,4 @@
+// provided by udacity
 $(function() {
 
     
