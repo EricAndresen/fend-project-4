@@ -53,7 +53,7 @@ $(function() {
     describe("Initial Entries", () => {
 
         // load feed before each test is run (correct for asyncronous loading)
-        beforeEach( async function(){
+        beforeEach( function(done){
             loadFeed(0, () => done());
         });
 
