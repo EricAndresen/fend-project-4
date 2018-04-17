@@ -59,7 +59,8 @@ $(function() {
         // check that there are elements rendered on the page
         it('loads atleast one element onto the page', function(done) {
             const feed = document.querySelector('.feed');
-            expect(feed.childElementCount.length).not.toBe(0);
+            const entries = feed.querySelectorAll('.entry')
+            expect(entries).not.toBe(0);
             done();
         });
 
