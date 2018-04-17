@@ -2,7 +2,7 @@
 
 This is a simple RSS reader provided as part of the Udacity Front-End Nanodegree Certificate.
 
-In this exercise I added jasmine test to a functioning RSS feedreader. Code that was provided in commented in feedreader.js.
+In this exercise I added jasmine test to a functioning RSS feedreader. Code that was provided is commented in feedreader.js.
 
 ### Instructions
 
