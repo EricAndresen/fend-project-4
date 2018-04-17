@@ -52,7 +52,7 @@ $(function() {
     describe("Initial Entries", () => {
 
         // load feed before each test is run (correct for asyncronous loading)
-        beforeEach(function(done){
+        beforeEach( async function(){
             loadFeed(0, () => done());
         });
 
@@ -68,16 +68,30 @@ $(function() {
 
     describe("New Feed Selection", () => {
 
-        // get current feed state
-        const feed = document.querySelector('.feed');
-        const feedSnapshot = feed.innerHTML
+        // declare snapshot variables here so later test can access
+        let feed1Snapshot;
+        let feed2Snapshot;
 
-        // change the feed loaded
-        beforeEach((done) => loadFeed(1, () => done()));
+        // Note: this uses callbacks, in future versions use async / await for better readability
+        beforeEach((done) => {
+            // load feed 1
+            loadFeed(0, () =>{
+                // set feed snapshot
+                let feed = document.querySelector('.feed');
+                feed1Snapshot = feed.innerHTML;
+                // load feed 2
+                loadFeed(1, () => {
+                    // set feed snapshot
+                    feed = document.querySelector('.feed');
+                    feed2Snapshot = feed.innerHTML;   
+                    done();
+                });
+            });
+        });
 
         // check that there is different content before and after a new feed is loaded
         it('loads new content when new feed is loaded', (done) => {
-            expect(feed.innerHTML == feedSnapshot).toBe(false);
+            expect(feed1Snapshot == feed2Snapshot).toBe(false);
             done();
         });
     });
